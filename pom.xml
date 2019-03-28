@@ -6,7 +6,6 @@
 	<artifactId>calendar-component-root</artifactId>
 	<packaging>pom</packaging>
 	<version>2.0-BETA4</version>
-	<classifier>datadobi</classifier>
 	<name>Calendar Add-on :: Root</name>
 
 	<prerequisites>
