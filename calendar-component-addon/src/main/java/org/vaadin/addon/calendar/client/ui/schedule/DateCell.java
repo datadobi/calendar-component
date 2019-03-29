@@ -94,7 +94,7 @@ public class DateCell extends FocusableComplexPanel
         makeFocusable();
         setDate(date);
 
-        addStyleName("v-calendar-day-times");
+        addStyleName("v-calendar-addon-day-times");
 
         handlers = new LinkedList<>();
 
@@ -781,11 +781,11 @@ public class DateCell extends FocusableComplexPanel
         this.today = today;
         addStyleDependentName("today");
         Element lastChild = (Element) getElement().getLastChild();
-        if (lastChild.getClassName().equals("v-calendar-current-time")) {
+        if (lastChild.getClassName().equals("v-calendar-addon-current-time")) {
             todaybar = lastChild;
         } else {
             todaybar = DOM.createDiv();
-            todaybar.setClassName("v-calendar-current-time");
+            todaybar.setClassName("v-calendar-addon-current-time");
             getElement().appendChild(todaybar);
         }
 
@@ -809,7 +809,7 @@ public class DateCell extends FocusableComplexPanel
     }
 
     public void setDateColor(String styleName) {
-        this.setStyleName("v-calendar-datecell " + styleName);
+        this.setStyleName("v-calendar-addon-datecell " + styleName);
     }
 
     public boolean isToday() {

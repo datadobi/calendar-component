@@ -34,7 +34,7 @@ public class WeeklyLongItems extends HorizontalPanel implements HasTooltipKey {
     private boolean undefinedWidth;
 
     public WeeklyLongItems(VCalendar calendar) {
-        setStylePrimaryName("v-calendar-weekly-longevents");
+        setStylePrimaryName("v-calendar-addon-weekly-longevents");
         this.calendar = calendar;
     }
 
@@ -74,7 +74,7 @@ public class WeeklyLongItems extends HorizontalPanel implements HasTooltipKey {
             int comp2 = dcDate.compareTo(to);
             WeeklyLongItemsDateCell eventLabel = dc
                     .getDateCell(calendarItem.getSlotIndex());
-            eventLabel.setStylePrimaryName("v-calendar-event");
+            eventLabel.setStylePrimaryName("v-calendar-addon-event");
             if (comp >= 0 && comp2 <= 0) {
                 eventLabel.setItem(calendarItem);
                 eventLabel.setCalendar(calendar);

@@ -76,7 +76,7 @@ public class DateCellDayItem extends FocusableHTML
 
         handlers = new LinkedList<>();
 
-        setStylePrimaryName("v-calendar-event");
+        setStylePrimaryName("v-calendar-addon-event");
 
         setCalendarItem(calendarItem);
 
@@ -89,19 +89,19 @@ public class DateCellDayItem extends FocusableHTML
         s.setPosition(Position.ABSOLUTE);
 
         caption = DOM.createDiv();
-        caption.addClassName("v-calendar-event-caption");
+        caption.addClassName("v-calendar-addon-event-caption");
         getElement().appendChild(caption);
 
         eventContent = DOM.createDiv();
-        eventContent.addClassName("v-calendar-event-content");
+        eventContent.addClassName("v-calendar-addon-event-content");
         getElement().appendChild(eventContent);
 
         if (weekGrid.getCalendar().isItemResizeAllowed() && getCalendarItem().isResizeable()) {
             topResizeBar = DOM.createDiv();
             bottomResizeBar = DOM.createDiv();
 
-            topResizeBar.addClassName("v-calendar-event-resizetop");
-            bottomResizeBar.addClassName("v-calendar-event-resizebottom");
+            topResizeBar.addClassName("v-calendar-addon-event-resizetop");
+            bottomResizeBar.addClassName("v-calendar-addon-event-resizebottom");
 
             getElement().appendChild(topResizeBar);
             getElement().appendChild(bottomResizeBar);

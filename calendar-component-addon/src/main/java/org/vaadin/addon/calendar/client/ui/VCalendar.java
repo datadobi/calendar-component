@@ -56,7 +56,7 @@ import org.vaadin.addon.calendar.client.ui.util.StartDateComparator;
 @SuppressWarnings({"unused","deprecation"})
 public class VCalendar extends Composite implements VHasDropHandler {
 
-    public static final String PRIMARY_STYLE = "v-calendar";
+    public static final String PRIMARY_STYLE = "v-calendar-addon";
 
     private static Logger getLogger() {
         return Logger.getLogger(VCalendar.class.getName());

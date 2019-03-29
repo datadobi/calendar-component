@@ -28,7 +28,7 @@ public class WeekLabel extends Label {
 
     public WeekLabel(String string, int week2, int year2) {
         super(string);
-        setStylePrimaryName("v-calendar-week-number");
+        setStylePrimaryName("v-calendar-addon-week-number");
         week = week2;
         year = year2;
     }

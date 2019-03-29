@@ -43,7 +43,7 @@ public class DateCellContainer extends FlowPanel
     private static int borderWidth = -1;
 
     public DateCellContainer() {
-        setStylePrimaryName("v-calendar-datecell");
+        setStylePrimaryName("v-calendar-addon-datecell");
     }
 
     public static int measureBorderWidth(DateCellContainer dc) {

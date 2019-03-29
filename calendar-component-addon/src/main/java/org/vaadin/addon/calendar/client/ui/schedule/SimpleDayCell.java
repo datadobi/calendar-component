@@ -91,15 +91,15 @@ public class SimpleDayCell extends FocusableFlowPanel implements MouseUpHandler,
         this.calendar = calendar;
         this.row = row;
         this.cell = cell;
-        setStylePrimaryName("v-calendar-month-day");
+        setStylePrimaryName("v-calendar-addon-month-day");
         caption = new Label();
-        caption.setStyleName("v-calendar-day-number");
+        caption.setStyleName("v-calendar-addon-day-number");
         caption.addMouseDownHandler(this);
         caption.addMouseUpHandler(this);
         add(caption);
 
         bottomspacer = new HTML();
-        bottomspacer.setStyleName("v-calendar-bottom-spacer-empty");
+        bottomspacer.setStyleName("v-calendar-addon-bottom-spacer-empty");
         bottomspacer.setWidth(3 + "em");
         add(bottomspacer);
     }
@@ -204,7 +204,7 @@ public class SimpleDayCell extends FocusableFlowPanel implements MouseUpHandler,
 
                 // Empty slot
                 HTML slot = new HTML();
-                slot.setStyleName("v-calendar-spacer");
+                slot.setStyleName("v-calendar-addon-spacer");
 
                 if (!clear) {
                     remove(i + 1);
@@ -250,7 +250,7 @@ public class SimpleDayCell extends FocusableFlowPanel implements MouseUpHandler,
                 bottomSpacerMouseDownHandler = bottomspacer
                         .addMouseDownHandler(this);
             }
-            bottomspacer.setStyleName("v-calendar-bottom-spacer");
+            bottomspacer.setStyleName("v-calendar-addon-bottom-spacer");
             bottomspacer.setHTML("<span>" + more + "</span>");
 
         } else {
@@ -260,11 +260,11 @@ public class SimpleDayCell extends FocusableFlowPanel implements MouseUpHandler,
             }
 
             if (extended) {
-                bottomspacer.setStyleName("v-calendar-bottom-spacer-expanded");
+                bottomspacer.setStyleName("v-calendar-addon-bottom-spacer-expanded");
                 bottomspacer.setHTML("<span></span>");
 
             } else {
-                bottomspacer.setStyleName("v-calendar-bottom-spacer-empty");
+                bottomspacer.setStyleName("v-calendar-addon-bottom-spacer-empty");
                 bottomspacer.setText("");
             }
         }

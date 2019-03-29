@@ -45,7 +45,7 @@ public class MonthGrid extends FocusableGrid implements KeyDownHandler {
         calendar = parent;
         setCellSpacing(0);
         setCellPadding(0);
-        setStylePrimaryName("v-calendar-month");
+        setStylePrimaryName("v-calendar-addon-month");
 
         keyDownHandler = addKeyDownHandler(this);
     }

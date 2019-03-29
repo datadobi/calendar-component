@@ -29,7 +29,7 @@ import java.util.Date;
  */
 public class MonthItemLabel extends HTML implements HasTooltipKey {
 
-    private static final String STYLENAME = "v-calendar-event";
+    private static final String STYLENAME = "v-calendar-addon-event";
 
     private boolean timeSpecificEvent = false;
     private Integer itemIndex;

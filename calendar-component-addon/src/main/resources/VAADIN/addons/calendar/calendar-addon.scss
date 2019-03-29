@@ -1,7 +1,6 @@
 @import "_calendar.scss";
 
 @mixin calendar-addon {
-
-    @include valo-calendar-global;
-    @include valo-calendar;
+    @include calendar-addon-global;
+    @include calendar-addon-header;
 }

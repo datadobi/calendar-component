@@ -47,15 +47,15 @@ public class SimpleDayToolbar extends HorizontalPanel implements ClickHandler {
 
         this.calendar = calendar;
 
-        setStylePrimaryName("v-calendar-header-month");
+        setStylePrimaryName("v-calendar-addon-header-month");
 
         backLabel = new Button();
-        backLabel.setStylePrimaryName("v-calendar-back");
+        backLabel.setStylePrimaryName("v-calendar-addon-back");
         backLabel.addClickHandler(this);
 
         nextLabel = new Button();
         nextLabel.addClickHandler(this);
-        nextLabel.setStylePrimaryName("v-calendar-next");
+        nextLabel.setStylePrimaryName("v-calendar-addon-next");
 
     }
 
@@ -66,7 +66,7 @@ public class SimpleDayToolbar extends HorizontalPanel implements ClickHandler {
 
         for (String dayName : dayNames) {
             Label l = new Label(dayName);
-            l.setStylePrimaryName("v-calendar-header-day");
+            l.setStylePrimaryName("v-calendar-addon-header-day");
             add(l);
         }
 

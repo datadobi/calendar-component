@@ -22,7 +22,7 @@ $v-calendar-event-colors: #00ace0, #2d9f19, #d18100, #ce3812, #2d55cd !default;
  *
  * @group calendar
  */
-@mixin valo-calendar-global ($primary-stylename: v-calendar) {
+@mixin calendar-addon-global ($primary-stylename: v-calendar-addon) {
   .#{$primary-stylename}-month-day-extended {
     overflow-y: scroll;
   }
@@ -135,7 +135,7 @@ $v-calendar-event-colors: #00ace0, #2d9f19, #d18100, #ce3812, #2d55cd !default;
  *
  * @group calendar
  */
-@mixin valo-calendar ($primary-stylename: v-calendar) {
+@mixin calendar-addon-header ($primary-stylename: v-calendar-addon) {
 
 
   .#{$primary-stylename}-header-day {

@@ -61,7 +61,7 @@ public class WeekGrid extends SimplePanel {
         content.add(timebar);
 
         wrapper = new SimplePanel();
-        wrapper.setStylePrimaryName("v-calendar-week-wrapper");
+        wrapper.setStylePrimaryName("v-calendar-addon-week-wrapper");
         wrapper.add(content);
 
         setWidget(wrapper);
@@ -74,7 +74,7 @@ public class WeekGrid extends SimplePanel {
             wrapper.remove(content);
 
             final ScrollPanel scrollPanel = new ScrollPanel();
-            scrollPanel.setStylePrimaryName("v-calendar-week-wrapper");
+            scrollPanel.setStylePrimaryName("v-calendar-addon-week-wrapper");
             scrollPanel.setWidget(content);
 
             scrollPanel.addScrollHandler(event -> {
@@ -99,7 +99,7 @@ public class WeekGrid extends SimplePanel {
             wrapper.remove(content);
 
             SimplePanel simplePanel = new SimplePanel();
-            simplePanel.setStylePrimaryName("v-calendar-week-wrapper");
+            simplePanel.setStylePrimaryName("v-calendar-addon-week-wrapper");
             simplePanel.setWidget(content);
 
             setWidget(simplePanel);
@@ -582,11 +582,11 @@ public class WeekGrid extends SimplePanel {
         }
 
         private void createTimeBar(boolean format24h) {
-            setStylePrimaryName("v-calendar-times");
+            setStylePrimaryName("v-calendar-addon-times");
 
             // Fist "time" is empty
             Element e = DOM.createDiv();
-            setStyleName(e, "v-calendar-time");
+            setStyleName(e, "v-calendar-addon-time");
             e.setInnerText("");
             getElement().appendChild(e);
 
@@ -595,7 +595,7 @@ public class WeekGrid extends SimplePanel {
             if (format24h) {
                 for (int i = firstHour + 1; i <= lastHour; i++) {
                     e = DOM.createDiv();
-                    setStyleName(e, "v-calendar-time");
+                    setStyleName(e, "v-calendar-addon-time");
                     String delimiter = dts.getClockDelimeter();
                     e.setInnerHTML("<span>" + i + "</span>" + delimiter + "00");
                     getElement().appendChild(e);
@@ -611,7 +611,7 @@ public class WeekGrid extends SimplePanel {
                 if (firstHour < 12) {
                     for (int i = firstHour + 1; i <= amStop; i++) {
                         e = DOM.createDiv();
-                        setStyleName(e, "v-calendar-time");
+                        setStyleName(e, "v-calendar-addon-time");
                         e.setInnerHTML("<span>" + timesFor12h[i] + "</span>"
                                 + " " + ampm[0]);
                         getElement().appendChild(e);
@@ -621,7 +621,7 @@ public class WeekGrid extends SimplePanel {
                 if (lastHour > 11) {
                     for (int i = pmStart; i < lastHour - 11; i++) {
                         e = DOM.createDiv();
-                        setStyleName(e, "v-calendar-time");
+                        setStyleName(e, "v-calendar-addon-time");
                         e.setInnerHTML("<span>" + timesFor12h[i] + "</span>"
                                 + " " + ampm[1]);
                         getElement().appendChild(e);

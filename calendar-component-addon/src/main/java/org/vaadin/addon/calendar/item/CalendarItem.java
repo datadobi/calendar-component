@@ -74,7 +74,7 @@ public interface CalendarItem extends Serializable {
      * event.setStyleName("color1");
      * </br></br>
      * CSS:</br>
-     * .v-calendar-event-color1 {</br>
+     * .v-calendar-addon-event-color1 {</br>
      * &nbsp;&nbsp;&nbsp;background-color: #9effae;</br>}</code>
      *
      * @return Style name.
