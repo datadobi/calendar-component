@@ -628,12 +628,14 @@ public class Calendar<ITEM extends EditableCalendarItem> extends AbstractCompone
 
             day.blockedSlots = new HashSet<>();
 
-            if (blockedTimes.containsKey(allOverDate)) {
-                day.blockedSlots.addAll(blockedTimes.get(allOverDate));
+            Set<Long> everyDayBlockedSlots = blockedTimes.get(allOverDate);
+            if (everyDayBlockedSlots != null) {
+                day.blockedSlots.addAll(everyDayBlockedSlots);
             }
 
-            if (blockedTimes.containsKey(Date.from(dateToShow.toInstant()))) {
-                day.blockedSlots.addAll(blockedTimes.get(Date.from(dateToShow.toInstant())));
+            Set<Long> thisDayBlockedSlots = blockedTimes.get(dateToShow.toLocalDate());
+            if (thisDayBlockedSlots != null) {
+                day.blockedSlots.addAll(thisDayBlockedSlots);
             }
 
             days.add(day);
@@ -1830,10 +1832,8 @@ public class Calendar<ITEM extends EditableCalendarItem> extends AbstractCompone
         markAsDirty();
     }
 
-    public void clearTimeBlocks(Date day) {
-        if (blockedTimes.containsKey(day)) {
-            blockedTimes.remove(day);
-        }
+    public void clearTimeBlocks(LocalDate day) {
+        blockedTimes.remove(day);
         markAsDirty();
     }
 
