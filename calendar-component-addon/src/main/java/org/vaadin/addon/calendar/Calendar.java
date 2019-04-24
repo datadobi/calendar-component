@@ -471,11 +471,11 @@ public class Calendar<ITEM extends EditableCalendarItem> extends AbstractCompone
                 item.caption = calItem.getCaption() == null ? "" : calItem.getCaption();
 
 // XXX STRING FORMATTER yyyy-MM-dd
-                item.dateFrom = DATE_FORMAT.format(calItem.getStart());
-                item.dateTo = DATE_FORMAT.format(calItem.getEnd());
+                item.dateFrom = DATE_FORMAT.format(calItem.getStart().withZoneSameInstant(getZoneId()));
+                item.dateTo = DATE_FORMAT.format(calItem.getEnd().withZoneSameInstant(getZoneId()));
 // XXX STRING FORMATTER HH:mm:ss
-                item.timeFrom = TIME_FORMAT.format(calItem.getStart());
-                item.timeTo = TIME_FORMAT.format(calItem.getEnd());
+                item.timeFrom = TIME_FORMAT.format(calItem.getStart().withZoneSameInstant(getZoneId()));
+                item.timeTo = TIME_FORMAT.format(calItem.getEnd().withZoneSameInstant(getZoneId()));
 
                 item.description = calItem.getDescription() == null ? "" : calItem.getDescription();
                 item.styleName = calItem.getStyleName() == null ? "" : calItem.getStyleName();
@@ -1730,10 +1730,10 @@ public class Calendar<ITEM extends EditableCalendarItem> extends AbstractCompone
             design.attr("time-format", currentTimeFormat == TimeFormat.Format12H ? "12h" : "24h");
         }
         if (startDate != null) {
-            design.attr("start-date", DATE_FORMAT.format(getStartDate()));
+            design.attr("start-date", DATE_FORMAT.format(getStartDate().withZoneSameInstant(getZoneId())));
         }
         if (endDate != null) {
-            design.attr("end-date", DATE_FORMAT.format(getEndDate()));
+            design.attr("end-date", DATE_FORMAT.format(getEndDate().withZoneSameInstant(getZoneId())));
         }
         if (!getZoneId().equals(ZoneId.systemDefault())) {
             design.attr("time-zone", getZoneId().getId());
