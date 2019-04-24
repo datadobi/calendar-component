@@ -381,7 +381,7 @@ public class Calendar<ITEM extends EditableCalendarItem> extends AbstractCompone
     public void setStartDate(ZonedDateTime date) {
 
         // reset all time information
-        date = date.withZoneSameLocal(getZoneId()).with(LocalTime.MIN);
+        date = date.withZoneSameInstant(getZoneId()).with(LocalTime.MIN);
 
         startDate = date;
 
@@ -416,7 +416,7 @@ public class Calendar<ITEM extends EditableCalendarItem> extends AbstractCompone
      */
     public void setEndDate(ZonedDateTime date) {
         // reset all time information
-        date = date.withZoneSameLocal(getZoneId()).with(LocalTime.MIN);
+        date = date.withZoneSameInstant(getZoneId()).with(LocalTime.MIN);
 
         // check start after end
         if (startDate != null && startDate.isAfter(date)) {
@@ -899,7 +899,7 @@ public class Calendar<ITEM extends EditableCalendarItem> extends AbstractCompone
     public void setZoneId(ZoneId zone) {
 
         if (!zoneId.equals(zone)) {
-            zoneId = zone;
+            zoneId = zone == null ? ZoneId.systemDefault() : zone;
 
             refreshDates();
         }
@@ -910,8 +910,8 @@ public class Calendar<ITEM extends EditableCalendarItem> extends AbstractCompone
      */
     private void refreshDates() {
 
-        setStartDate(getStartDate());
-        setEndDate(getEndDate());
+        setStartDate(getStartDate().withZoneSameLocal(getZoneId()));
+        setEndDate(getEndDate().withZoneSameLocal(getZoneId()));
 
         markAsDirty();
     }
