@@ -568,12 +568,9 @@ public class Calendar<ITEM extends EditableCalendarItem> extends AbstractCompone
         getState().firstDayOfWeek = getFirstDayOfWeek() == MONDAY ? 2 : 1;
     }
 
-	private DayOfWeek getFirstDayOfWeek() {
-		if(Objects.nonNull(customFirstDayOfWeek)) {
-			return customFirstDayOfWeek;
-		}
-		return WeekFields.of(getLocale()).getFirstDayOfWeek();
-	}
+	public DayOfWeek getFirstDayOfWeek() {
+        return customFirstDayOfWeek != null ? customFirstDayOfWeek : WeekFields.of(getLocale()).getFirstDayOfWeek();
+    }
 
     /**
      * Allow setting first day of week independent of Locale. Set to null if you
